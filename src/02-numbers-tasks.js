@@ -7,6 +7,7 @@
  *                                                                                           *
  ******************************************************************************************* */
 
+
 /**
  * Returns an area of a rectangle given by width and height.
  *
@@ -19,8 +20,10 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
+  // throw new Error('Not implemented');
   return width * height;
 }
+
 
 /**
  * Returns a circumference of circle given by radius.
@@ -34,7 +37,8 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-  return 2 * radius * Math.PI;
+  // throw new Error('Not implemented');
+  return radius * 2 * Math.PI;
 }
 
 /**
@@ -50,6 +54,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
+  // throw new Error('Not implemented');
   return value1 / 2 + value2 / 2;
 }
 
@@ -69,8 +74,8 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-  return distance;
+  // throw new Error('Not implemented');
+  return Math.hypot(x2 - x1, y2 - y1);
 }
 
 /**
@@ -86,8 +91,10 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
+  // throw new Error('Not implemented');
   return -b / a;
 }
+
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi,
@@ -108,11 +115,11 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  const scalarProduct = x1 * x2 + y1 * y2;
-  const lengthOne = Math.sqrt(x1 ** 2 + y1 ** 2);
-  const lengthTwo = Math.sqrt(x2 ** 2 + y2 ** 2);
-  const cos = scalarProduct / (lengthOne * lengthTwo);
-  return Math.acos(cos);
+  // throw new Error('Not implemented');
+  const firstAngle = Math.atan2(x1, y1);
+  const secondAngle = Math.atan2(x2, y2);
+  const angle = firstAngle - secondAngle;
+  return Math.abs(angle);
 }
 
 /**
@@ -128,9 +135,10 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const valueString = value.toString();
-  return valueString[valueString.length - 1];
+  // throw new Error('Not implemented');
+  return value.toString().slice(-1);
 }
+
 
 /**
  * Returns a number by given string representation.
@@ -144,7 +152,8 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  return Number(value);
+  // throw new Error('Not implemented');
+  return +value;
 }
 
 /**
@@ -161,8 +170,10 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelepipedDiagonal(a, b, c) {
+  // throw new Error('Not implemented');
   return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
+
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -182,11 +193,9 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  if (pow === 0) {
-    return num;
-  }
-
-  return Math.round(num / 10 ** pow) * 10 ** pow;
+  // throw new Error('Not implemented');
+  const zero = 10 ** pow;
+  return Math.round(num / zero) * zero;
 }
 
 /**
@@ -207,11 +216,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  for (let i = 2; i < n; i += 1) {
+  // throw new Error('Not implemented');
+  // eslint-disable-next-line no-plusplus
+  for (let i = 2; i < n; i++) {
     if (n % i === 0) return false;
   }
   return true;
 }
+
 /**
  * Tries to convert value to number and returns it if conversion was successful;
  * otherwise returns default value passed as a second argument.
@@ -228,10 +240,8 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  if (!Number(value)) {
-    return def;
-  }
-  return Number(value);
+  // throw new Error('Not implemented');
+  return +value ? value : def;
 }
 
 module.exports = {
